@@ -38,20 +38,23 @@
  
  @auth
         <li class="nav-item"><a class="nav-link" href="{{ route('image.create') }}">@lang('Ajouter une image')</a></li>
- @endauth
+ @endauth 
+  @auth
         <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle
                     " href="#" id="navbarDropdownCat" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     @lang('Catégories')
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownCat">
-                   
+               
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdownCat">
+                  
                     @foreach($categories as $category)
                         <a class="dropdown-item" href="{{ route('category', $category->slug) }}">{{ $category->name }}</a>
                     @endforeach
                 </div>
-            </li> 
 
+            </li> 
+            @endauth
         </ul>
 
 
